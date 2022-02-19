@@ -136,7 +136,7 @@ function exeninite()
     Write-Host "1: NINITE"
     Write-Host "2: Reader"
     Write-Host "3: McAfee"
-	Write-Host "4: AgentMAX"
+	Write-Host "4: Agent"
 	Write-Host "5: Desinstall365"
 	Write-Host""
 	Write-Host "6: Menu"
@@ -173,8 +173,8 @@ $choixexe=Read-Host " Votre Choix "
 	}
 	function Agent
 	{
-    $AgentMAX = C:\script\Agent.exe
-				start-process -FilePath $AgentMAX
+    $Agent = C:\script\Agent.exe
+				start-process -FilePath $Agent
 					Start-Sleep -Seconds 2
 	}
 	function Desinstall365
@@ -237,7 +237,7 @@ function scanposte()
     }
 function lecteurreseau()
 	{
-	New-PSDrive -Name P -Root \\WIN-CPEF1VNHL2C\Partages -PSProvider FileSystem -Persist -Credential $name@labo.lan
+	New-PSDrive -Name P -Root \\SRV-DC\Partages -PSProvider FileSystem -Persist -Credential $name@labo.lan
 	Get-ChildItem P:
 	Start-Sleep -Seconds 5
 	#Remove-PSDrive P	
